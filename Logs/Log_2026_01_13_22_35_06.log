@@ -1,0 +1,82 @@
+2026-01-13 22:35:30 - INFO - Reading text file from: C:\Hackathons\Thiagarajar\main\Backend\HealthCare\prompts\Prescription\Main.txt
+2026-01-13 22:35:30 - INFO - File read successfully
+2026-01-13 22:35:31 - INFO - Reading text file from: C:\Hackathons\Thiagarajar\main\Backend\HealthCare\prompts\Assistant\System.txt
+2026-01-13 22:35:31 - INFO - File read successfully
+2026-01-13 22:35:31 - INFO - Assistant Agent initialized
+2026-01-13 22:35:31 - INFO - Agents Initialized
+2026-01-13 22:35:31 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:3000
+2026-01-13 22:35:31 - INFO - [33mPress CTRL+C to quit[0m
+2026-01-13 22:38:39 - INFO - Received message from +919894200254: Hi
+2026-01-13 22:38:39 - INFO - Media URL: None
+2026-01-13 22:38:40 - INFO - -- BEGIN Twilio API Request --
+2026-01-13 22:38:40 - INFO - POST Request: https://api.twilio.com/2010-04-01/Accounts/AC1e80e03c5d08b915a95954bfaf90e4a7/Messages.json
+2026-01-13 22:38:40 - INFO - Headers:
+2026-01-13 22:38:40 - INFO - Content-Type : application/x-www-form-urlencoded
+2026-01-13 22:38:40 - INFO - Accept : application/json
+2026-01-13 22:38:40 - INFO - User-Agent : twilio-python/9.9.0 (Windows AMD64) Python/3.11.4
+2026-01-13 22:38:40 - INFO - X-Twilio-Client : python-9.9.0
+2026-01-13 22:38:40 - INFO - Accept-Charset : utf-8
+2026-01-13 22:38:40 - INFO - -- END Twilio API Request --
+2026-01-13 22:38:41 - INFO - Response Status Code: 201
+2026-01-13 22:38:41 - INFO - Response Headers: {'Content-Type': 'application/json;charset=utf-8', 'Content-Length': '857', 'Connection': 'keep-alive', 'Date': 'Tue, 13 Jan 2026 17:08:43 GMT', 'Twilio-Concurrent-Requests': '1', 'Twilio-Request-Id': 'RQb162384a3371095e314daad837eb580d', 'Twilio-Request-Duration': '0.113', 'X-Home-Region': 'us1', 'X-API-Domain': 'api.twilio.com', 'Strict-Transport-Security': 'max-age=31536000', 'X-Cache': 'Miss from cloudfront', 'Via': '1.1 6a30ffc322fb54d6adeea9e7c220e878.cloudfront.net (CloudFront)', 'X-Amz-Cf-Pop': 'MAA51-P2', 'X-Amz-Cf-Id': 'CiYkgVyIab_wR4-K0ZTnVWqtQWaoaLTDO221BSwoG8UzKraIsRjfhw==', 'X-Powered-By': 'AT-5000', 'X-Shenanigans': 'none', 'Vary': 'Origin'}
+2026-01-13 22:38:41 - INFO - 127.0.0.1 - - [13/Jan/2026 22:38:41] "POST /Whatsapp HTTP/1.1" 200 -
+2026-01-13 22:38:49 - INFO - Received message from +919894200254: I have flu
+2026-01-13 22:38:49 - INFO - Media URL: None
+2026-01-13 22:38:53 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-13 22:38:56 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-13 22:38:56 - INFO - Assistant response: To recover from a flu-like illness, focus on: 
+1. Rest and hydration 
+2. Eating light, easy-to-digest foods 
+3. Managing fever and body aches with medication (as directed)
+4. Easing cough and congestion with steam or honey. 
+Seek medical care if you experience severe symptoms or worsening conditions. Prevent spreading the virus by covering your mouth, washing hands, and staying home until fever-free. Consult a doctor for personal medical decisions.
+2026-01-13 22:38:56 - INFO - -- BEGIN Twilio API Request --
+2026-01-13 22:38:56 - INFO - POST Request: https://api.twilio.com/2010-04-01/Accounts/AC1e80e03c5d08b915a95954bfaf90e4a7/Messages.json
+2026-01-13 22:38:56 - INFO - Headers:
+2026-01-13 22:38:56 - INFO - Content-Type : application/x-www-form-urlencoded
+2026-01-13 22:38:56 - INFO - Accept : application/json
+2026-01-13 22:38:56 - INFO - User-Agent : twilio-python/9.9.0 (Windows AMD64) Python/3.11.4
+2026-01-13 22:38:56 - INFO - X-Twilio-Client : python-9.9.0
+2026-01-13 22:38:56 - INFO - Accept-Charset : utf-8
+2026-01-13 22:38:56 - INFO - -- END Twilio API Request --
+2026-01-13 22:38:56 - INFO - Response Status Code: 201
+2026-01-13 22:38:56 - INFO - Response Headers: {'Content-Type': 'application/json;charset=utf-8', 'Content-Length': '1239', 'Connection': 'keep-alive', 'Date': 'Tue, 13 Jan 2026 17:08:59 GMT', 'Twilio-Concurrent-Requests': '1', 'Twilio-Request-Id': 'RQ808b388267a64749949c663e99193c9c', 'Twilio-Request-Duration': '0.092', 'X-Home-Region': 'us1', 'X-API-Domain': 'api.twilio.com', 'Strict-Transport-Security': 'max-age=31536000', 'X-Cache': 'Miss from cloudfront', 'Via': '1.1 6a30ffc322fb54d6adeea9e7c220e878.cloudfront.net (CloudFront)', 'X-Amz-Cf-Pop': 'MAA51-P2', 'X-Amz-Cf-Id': 'YqD6mSyn7R95eevuq58GcJy-27tGUa6zawaoykBIUItH_RhWLvd1Ag==', 'X-Powered-By': 'AT-5000', 'X-Shenanigans': 'none', 'Vary': 'Origin'}
+2026-01-13 22:38:56 - INFO - 127.0.0.1 - - [13/Jan/2026 22:38:56] "POST /Whatsapp HTTP/1.1" 200 -
+2026-01-13 22:39:19 - INFO - Received message from +919894200254: Macha enaku jaundice
+2026-01-13 22:39:19 - INFO - Media URL: None
+2026-01-13 22:39:22 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-13 22:39:26 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-13 22:39:26 - INFO - Assistant response: **Jaundice (\u0bae\u0b9e\u0bcd\u0b9a\u0bb3\u0bcd \u0b95\u0bbe\u0bae\u0bbe\u0bb2\u0bc8) \u0b8e\u0ba9\u0bcd\u0bb1\u0bbe\u0bb2\u0bcd \u0b8e\u0ba9\u0bcd\u0ba9?**
+- \u0b95\u0bb2\u0bcd\u0bb2\u0bc0\u0bb0\u0bb2\u0bcd \u0b9a\u0bc6\u0baf\u0bb2\u0bbf\u0bb4\u0baa\u0bcd\u0baa\u0bbe\u0bb2\u0bcd \u0b87\u0bb0\u0ba4\u0bcd\u0ba4\u0ba4\u0bcd\u0ba4\u0bbf\u0bb2\u0bcd \u0baa\u0bbf\u0bb2\u0bbf\u0bb0\u0bc2\u0baa\u0bbf\u0ba9\u0bcd \u0b85\u0ba4\u0bbf\u0b95\u0bb0\u0bbf\u0baa\u0bcd\u0baa\u0bbe\u0bb2\u0bcd \u0ba4\u0bcb\u0bb2\u0bcd \u0bae\u0bb1\u0bcd\u0bb1\u0bc1\u0bae\u0bcd \u0b95\u0ba3\u0bcd\u0b95\u0bb3\u0bcd \u0bae\u0b9e\u0bcd\u0b9a\u0bb3\u0bcd \u0ba8\u0bbf\u0bb1\u0bae\u0bbe\u0b95\u0bbf\u0bb1\u0ba4\u0bc1.
+
+**\u0bae\u0bb0\u0bc1\u0ba4\u0bcd\u0ba4\u0bc1\u0bb5\u0bb0\u0bc8 \u0b9a\u0ba8\u0bcd\u0ba4\u0bbf\u0b95\u0bcd\u0b95 \u0bb5\u0bc7\u0ba3\u0bcd\u0b9f\u0bc1\u0bae\u0bcd \u0b8e\u0baa\u0bcd\u0baa\u0bcb\u0ba4\u0bc1?**
+- \u0bae\u0b9e\u0bcd\u0b9a\u0bb3\u0bcd \u0ba8\u0bbf\u0bb1\u0bae\u0bcd 2 \u0ba8\u0bbe\u0b9f\u0bcd\u0b95\u0bb3\u0bc1\u0b95\u0bcd\u0b95\u0bc1 \u0bae\u0bc7\u0bb2\u0bcd \u0ba8\u0bc0\u0b9f\u0bbf\u0ba4\u0bcd\u0ba4\u0bbe\u0bb2\u0bcd
+- \u0b89\u0b9f\u0bb2\u0bcd \u0bb5\u0bb2\u0bbf, \u0bb5\u0baf\u0bbf\u0bb1\u0bcd\u0bb1\u0bc1 \u0bb5\u0bc0\u0b95\u0bcd\u0b95\u0bae\u0bcd, \u0baa\u0bc1\u0ba3\u0bcd, \u0bb5\u0bbe\u0ba8\u0bcd\u0ba4\u0bbf, \u0bb5\u0baf\u0bbf\u0bb1\u0bcd\u0bb1\u0bbf\u0bb2\u0bcd \u0b8e\u0bb0\u0bbf\u0b9a\u0bcd\u0b9a\u0bb2\u0bcd \u0b85\u0bb2\u0bcd\u0bb2\u0ba4\u0bc1 \u0b9a\u0bbf\u0bb1\u0bc1\u0ba8\u0bc0\u0bb0\u0bbf\u0bb2\u0bcd \u0b87\u0bb0\u0bc1\u0ba3\u0bcd\u0b9f \u0ba8\u0bbf\u0bb1\u0bae\u0bcd \u0b87\u0bb0\u0bc1\u0ba8\u0bcd\u0ba4\u0bbe\u0bb2\u0bcd
+- \u0b95\u0bbe\u0baf\u0bcd\u0b9a\u0bcd\u0b9a\u0bb2\u0bcd, \u0b9a\u0bcb\u0bb0\u0bcd\u0bb5\u0bc1 \u0b85\u0ba4\u0bbf\u0b95\u0bae\u0bbe\u0b95 \u0b87\u0bb0\u0bc1\u0ba8\u0bcd\u0ba4\u0bbe\u0bb2\u0bcd
+
+**\u0baa\u0bb0\u0bbf\u0ba8\u0bcd\u0ba4\u0bc1\u0bb0\u0bc8\u0b95\u0bcd\u0b95\u0baa\u0bcd\u0baa\u0b9f\u0bc1\u0bae\u0bcd \u0b89\u0ba3\u0bb5\u0bc1\u0baa\u0bcd \u0baa\u0bb4\u0b95\u0bcd\u0b95\u0b99\u0bcd\u0b95\u0bb3\u0bcd**
+- \u0ba4\u0ba3\u0bcd\u0ba3\u0bc0\u0bb0\u0bcd, \u0ba4\u0bc6\u0bb3\u0bbf\u0bb5\u0bbe\u0ba9 \u0b9a\u0bc2\u0baa\u0bcd, \u0baa\u0b9a\u0bcd\u0b9a\u0bc8 \u0baa\u0bb4\u0b9a\u0bcd\u0b9a\u0bbe\u0bb1\u0bc1 \u0b85\u0ba4\u0bbf\u0b95\u0bae\u0bcd \u0b95\u0bc1\u0b9f\u0bbf\u0b95\u0bcd\u0b95\u0bb5\u0bc1\u0bae\u0bcd
+- \u0bae\u0bc6\u0ba9\u0bcd\u0bae\u0bc8\u0baf\u0bbe\u0ba9 \u0baa\u0bc1\u0bb0\u0ba4\u0bae\u0bcd: \u0bb5\u0bc6\u0ba8\u0bcd\u0ba4 \u0bae\u0bc1\u0b9f\u0bcd\u0b9f\u0bc8, \u0bb5\u0bc6\u0ba8\u0bcd\u0ba4 \u0b95\u0bcb\u0bb4\u0bbf, \u0bae\u0bc0\u0ba9\u0bcd, \u0baa\u0bc0\u0ba9\u0bcd\u0bb8\u0bcd
+- \u0b95\u0bbe\u0baf\u0bcd\u0b95\u0bb1\u0bbf & \u0baa\u0bb4\u0bae\u0bcd: \u0b95\u0bc7\u0bb0\u0b9f\u0bcd, \u0baa\u0b9a\u0bcd\u0b9a\u0bc8 \u0b87\u0bb2\u0bc8\u0b95\u0bb3\u0bcd, \u0baa\u0baa\u0bcd\u0baa\u0bbe\u0bb3\u0bbf, \u0b86\u0bb0\u0b9e\u0bcd\u0b9a\u0bc1, \u0baa\u0bc1\u0bb3\u0bbf\u0baa\u0bcd\u0baa\u0bc1 \u0baa\u0bb4\u0b99\u0bcd\u0b95\u0bb3\u0bcd
+
+**\u0bb5\u0bbe\u0bb4\u0bcd\u0b95\u0bcd\u0b95\u0bc8 \u0bae\u0bc1\u0bb1\u0bc8\u0baf\u0bbf\u0bb2\u0bcd \u0b95\u0bb5\u0ba9\u0bae\u0bcd**
+- \u0baa\u0bcb\u0ba4\u0bbf\u0baf \u0ba4\u0bc2\u0b95\u0bcd\u0b95\u0bae\u0bcd (7-8 \u0bae\u0ba3\u0bbf) \u0bae\u0bb1\u0bcd\u0bb1\u0bc1\u0bae\u0bcd \u0b93\u0baf\u0bcd\u0bb5\u0bc1
+- \u0bae\u0bbf\u0ba4\u0bae\u0bbe\u0ba9 \u0ba8\u0b9f\u0bc8\u0baa\u0baf\u0bbf\u0bb1\u0bcd\u0b9a\u0bbf (\u0bae\u0bb0\u0bc1\u0ba4\u0bcd\u0ba4\u0bc1\u0bb5\u0bb0\u0bcd \u0b85\u0ba9\u0bc1\u0bae\u0ba4\u0bbf\u0ba4\u0bcd\u0ba4\u0bbe\u0bb2\u0bcd)
+- \u0bae\u0ba9 \u0b85\u0bb4\u0bc1\u0ba4\u0bcd\u0ba4\u0bae\u0bcd \u0b95\u0bc1\u0bb1\u0bc8\u0bb5\u0bc1
+
+**\u0bae\u0bb0\u0bc1\u0ba4\u0bcd\u0ba4\u0bc1\u0bb5 \u0b89\u0ba4\u0bb5\u0bbf\u0baf\u0bbf\u0ba9\u0bcd \u0bae\u0bc1\u0b95\u0bcd\u0b95\u0bbf\u0baf\u0ba4\u0bcd\u0ba4\u0bc1\u0bb5\u0bae\u0bcd**
+- \u0b9c\u0bb5\u0bc1\u0ba3\u0bcd\u0b9f\u0bbf\u0bb8\u0bcd \u0baa\u0bb2 \u0b95\u0bbe\u0bb0\u0ba3\u0b99\u0bcd\u0b95\u0bb3\u0bbe\u0bb2\u0bcd \u0b8f\u0bb1\u0bcd\u0baa\u0b9f\u0bb2\u0bbe\u0bae\u0bcd. \u0ba4\u0bc1\u0bb2\u0bcd\u0bb2\u0bbf\u0baf\u0bae\u0bbe\u0ba9 \u0baa\u0bb0\u0bbf\u0b9a\u0bcb\u0ba4\u0ba9\u0bc8 \u0b85\u0bb5\u0b9a\u0bbf\u0baf\u0bae\u0bcd.
+- \u0bae\u0bb0\u0bc1\u0ba4\u0bcd\u0ba4\u0bc1\u0bb5\u0bb0\u0bcd \u0b89\u0b99\u0bcd\u0b95\u0bb3\u0bc1\u0b95\u0bcd\u0b95\u0bc1 \u0ba4\u0bc7\u0bb5\u0bc8\u0baf\u0bbe\u0ba9 \u0baa\u0bb0\u0bbf\u0b9a\u0bcb\u0ba4\u0ba9\u0bc8\u0b95\u0bb3\u0bcd \u0b9a\u0bc6\u0baf\u0bcd\u0ba4\u0bc1, \u0b95\u0bbe\u0bb0\u0ba3\u0ba4\u0bcd\u0ba4\u0bc8 \u0b95\u0ba3\u0bcd\u0b9f\u0bb1\u0bbf\u0baf \u0b89\u0ba4\u0bb5\u0bc1\u0bb5\u0bbe\u0bb0\u0bcd.
+2026-01-13 22:39:26 - INFO - -- BEGIN Twilio API Request --
+2026-01-13 22:39:26 - INFO - POST Request: https://api.twilio.com/2010-04-01/Accounts/AC1e80e03c5d08b915a95954bfaf90e4a7/Messages.json
+2026-01-13 22:39:26 - INFO - Headers:
+2026-01-13 22:39:26 - INFO - Content-Type : application/x-www-form-urlencoded
+2026-01-13 22:39:26 - INFO - Accept : application/json
+2026-01-13 22:39:26 - INFO - User-Agent : twilio-python/9.9.0 (Windows AMD64) Python/3.11.4
+2026-01-13 22:39:26 - INFO - X-Twilio-Client : python-9.9.0
+2026-01-13 22:39:26 - INFO - Accept-Charset : utf-8
+2026-01-13 22:39:26 - INFO - -- END Twilio API Request --
+2026-01-13 22:39:27 - INFO - Response Status Code: 201
+2026-01-13 22:39:27 - INFO - Response Headers: {'Content-Type': 'application/json;charset=utf-8', 'Content-Length': '5381', 'Connection': 'keep-alive', 'Date': 'Tue, 13 Jan 2026 17:09:29 GMT', 'Twilio-Concurrent-Requests': '1', 'Twilio-Request-Id': 'RQd3221613bf2161281babed6e7758cb03', 'Twilio-Request-Duration': '0.091', 'X-Home-Region': 'us1', 'X-API-Domain': 'api.twilio.com', 'Strict-Transport-Security': 'max-age=31536000', 'X-Cache': 'Miss from cloudfront', 'Via': '1.1 6a30ffc322fb54d6adeea9e7c220e878.cloudfront.net (CloudFront)', 'X-Amz-Cf-Pop': 'MAA51-P2', 'X-Amz-Cf-Id': 'P6GK90lcMvPzhsRet0601YJ9kB_edvJDJusEF7_fbprEJUPFi_308g==', 'X-Powered-By': 'AT-5000', 'X-Shenanigans': 'none', 'Vary': 'Origin'}
+2026-01-13 22:39:27 - INFO - 127.0.0.1 - - [13/Jan/2026 22:39:27] "POST /Whatsapp HTTP/1.1" 200 -

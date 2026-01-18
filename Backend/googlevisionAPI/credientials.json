@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "shining-domain-473404-u2",
+  "private_key_id": "ca4831a311ac739a4e0b9dcdc9e2b2d352d95bec",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQCwWNPVHHPuf6KK\n4j7no+Y0SFaPXuzl7bAmxX4A3K8IRBuQvdPmBVKVxieE6H4BxHmOEmOLvnYo43Js\ntNVUjM4j/yO8Vv+pdTs54dPQ3BIRr3FqtVqGE2jmyB2L8m8hSLsPg1bEg1zQs0pU\nf905TtLs9lR5tZ2Z36ieSmCGZSZCdd4lqGSaTWk3nv3eiZkloiKKQ9aGYrYAhFqy\nS6xbKeQoS5ooGCfZnsdGiCFJr2ztw8LAy2B8qe5o/gEpnQE05+pKf9bRVcSmw9Kp\nYYPaIQz6Wkr44jAEmwNruTudoxGPUSkQoEmdDHtNem44X41bHCFCQGn1MB4HUlAC\nOEuAVQNlAgMBAAECggEAL+1cWSGcAnhO4UcfCI6bbJ8yY1HNuanRQ6BOIAbaTTlR\ncpOc6PmOWeVabT1QrcNLtAicZGj1rSQvv4qgJhQEnHTlrfTJFDGn0JHnIu8EvCi9\n/t3eBe11h69glF3lxRqCuHMeHFeFXLU1oOSFZ+Nb4QoLqG5rMFxAdBDLzgrkjJAO\n0TJnHMyLEjf2cehTXoXUjGCaIBmamFaVpk1ywmHSRxCy+mBxNyFerBr1Zx9cDvsN\nfKOuCXaXuCtg1NgC1/ucR0WbhL3uOjfkgPW9kuSK7u7HGrrUwMsjZm3KUeycHmP8\nJwiYahppiPla8nFajamJty8wo/RWyOmFaJSlBYVpewKBgQDw9MIEOfijEwrPjTCN\nuDGOi+fXTo64qzjQ6DlowX6NX2I3qPvVj9lWWYlQq0qCMbvBorr76vOf1JmFFuDw\nSuXHy3nebzUBvThWlsfAn5PNCx2XPCLcPcZACk35kypHXNQUaCapfnA065KQHZsP\nqgbp2Zg85IzCVD2W+ryvAZE3wwKBgQC7W2lLFIbvzGp9jnif75xbPz4wFvRPod7U\niVBGO6CX1Iv2GnsmxDfzmIoO0MnW9bx4Crkeen253k2LtveLgaYHzsWnv0rz9twG\nuoOI4XQXv6riCfkXblNKcoboVJQj+fzllk3tCEycr2e1AF4g31NqjQ6n+oL3Pq+m\nKd5t+bXNtwKBgEKf2pmikd49YKrc5kT5XjKE+rjszse/CDmzTFRr1Bsw+Y5cWi3F\n1Zlrrm0wv6xaJgk3fq4zW+OgvEYxekbW3swstejMJQLzGAXRMTBQr2Rto2Pyy8zM\nA+onL0JH79PFlhqCZdZN0KbBUEgq93oQUFMOyGpl44nEEzeQ4uUc8NNTAoGBALPi\nWV7/z2qvXlM8li4g9YNaXk/3ygwnA3YWfJ9iIpeEN/lLhZA79uiIPY1qA1DDUXgD\n+6b6vnnVqaiKPHSSPyHh8j5T2RgRnUFMlHu40yj2GpC6OJG5mHizKzon8q/0Fk8s\nl5cMT9pkQvMy7i0rnsB/vGGlkVbnteeY7Xmztk1TAoGAR6uOX7lrQ8JrOqqR1Twk\nwZKYJoq/4G3tZNKIQwpy8Za1mwcJKh+LDRrMTdBH/5UM2n/QLfP4a/WHTIFH27I5\nsXusYkB2sRWBtWUmR7oCRZOZAc1DoK0QKB8vtP9CE8a8cjwhdLjxrnCOTkmm51s4\nxR6UThT75ezbso5iKD1u8tI=\n-----END PRIVATE KEY-----\n",
+  "client_email": "healthcarepresciption@shining-domain-473404-u2.iam.gserviceaccount.com",
+  "client_id": "110206604354278962096",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/healthcarepresciption%40shining-domain-473404-u2.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}

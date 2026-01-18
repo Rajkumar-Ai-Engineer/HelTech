@@ -1,0 +1,9 @@
+others
+venv
+Logs 
+Notebooks
+Artifacts
+supabase_table_creation.py
+streamlitwebapp.py 
+app.py 
+

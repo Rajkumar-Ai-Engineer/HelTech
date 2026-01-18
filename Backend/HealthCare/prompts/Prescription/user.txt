@@ -1,0 +1,179 @@
+The following text is raw OCR output extracted from a medical prescription.
+The OCR text may be extremely noisy and may include:
+- Misspelled or abbreviated medicine names
+- Mixed order of dosage, frequency, and duration
+- Short forms such as Tab, Cap, OD, BD, TDS, HS, SOS
+- Non-medical noise such as clinic names, doctor names, addresses, stamps
+- OCR artifacts like l/I confusion, O/0 confusion, extra spaces
+
+**CRITICAL: You MUST extract EVERY SINGLE medicine mentioned in the OCR text.**
+**DO NOT skip or miss any medicines, even if the text is unclear or incomplete.**
+
+Your responsibilities:
+
+1. **THOROUGHLY scan the ENTIRE OCR text** and identify EACH and EVERY medicine mentioned.
+   - Look for medicine names in ALL parts of the text (beginning, middle, end)
+   - Medicines may appear in lists, paragraphs, or scattered throughout
+   - Each line may contain a different medicine
+   - Some medicines may be on the same line separated by commas or spaces
+   - DO NOT stop after finding a few medicines - continue scanning until the end
+
+2. For each medicine, extract:
+   - Name (FIRST preserve exact OCR text, THEN attempt normalization)
+   - Dosage strength (ONLY if explicitly present)
+   - Dosage form (Tablet, Capsule, Syrup, Injection, or UNKNOWN)
+   - Frequency per day
+   - Duration (number of days, if present)
+
+3. MEDICINE NAME NORMALIZATION:
+   - Extract the medicine name EXACTLY as it appears in OCR first
+   - Attempt to normalize by:
+     * Removing extra spaces, special characters
+     * Fixing common OCR errors (l→I, O→0, rn→m)
+     * Expanding abbreviations (Tab→Tablet, Cap→Capsule, PCM→Paracetamol)
+     * Correcting common misspellings phonetically
+   - Common medicine patterns to recognize:
+     * Paracetamol/Acetaminophen variants: Paracitamol, Paracetmol, PCM, Crocin
+     * Ibuprofen variants: Ibuprofin, Ibuprfen, Brufen
+     * Metformin variants: Metfornin, Metforrnin
+     * Amoxicillin variants: Amoxicilin, Amoxycillin
+     * Omeprazole variants: Omeprazol, Omiprazole
+     * Pantoprazole variants: Pantoprazol, Panto
+     * Ranitidine variants: Rantidine, Zantac
+   - Verify normalized name using database (get_details tool)
+   - If no database match found, mark as UNVERIFIED but STILL INCLUDE IT
+
+4. **EXTRACTION PATTERNS TO RECOGNIZE:**
+   - **List format:** Each line is a medicine
+     ```
+     1. Paracetamol 500mg
+     2. Ibuprofen 400mg
+     3. Omeprazole 20mg
+     ```
+   - **Inline format:** Multiple medicines on one line
+     ```
+     Tab Paracetamol 500mg, Tab Ibuprofen 400mg, Cap Omeprazole 20mg
+     ```
+   - **Prescription format:** Medicine followed by instructions
+     ```
+     Paracetamol 500mg - 1-0-1 - 5 days
+     Ibuprofen 400mg - 0-0-1 - 3 days
+     ```
+   - **Mixed format:** Combination of above
+   - **Scattered format:** Medicines mentioned throughout the text
+
+5. **COMMON PRESCRIPTION ABBREVIATIONS:**
+   - Tab/Tb = Tablet
+   - Cap = Capsule
+   - Syr = Syrup
+   - Inj = Injection
+   - OD = Once daily (1-0-0 or 1)
+   - BD = Twice daily (1-0-1 or 2)
+   - TDS = Three times daily (1-1-1 or 3)
+   - QID = Four times daily (1-1-1-1 or 4)
+   - HS = At bedtime (0-0-1)
+   - SOS = As needed
+   - AC = Before food
+   - PC = After food
+   - mg = milligrams
+   - ml = milliliters
+   - gm = grams
+
+6. Based ONLY on the extracted instructions:
+   - Explain how the medicine should be taken (usage explanation)
+   - Explain food-related guidance ONLY if explicitly stated or clearly implied (e.g., "after food", "before food")
+   - If food guidance is not clearly mentioned, return "UNKNOWN"
+
+7. Do NOT:
+   - Skip any medicines, even if unclear
+   - Guess food type (e.g., fruits, milk, rice)
+   - Add health benefits
+   - Add warnings unless explicitly written
+   - Expand abbreviations beyond their direct meaning
+   - Invent medicine names not present in OCR
+   - Substitute with similar medicines without database confirmation
+
+8. If the OCR text is unclear or incomplete:
+   - Preserve extracted data in original_ocr_name
+   - Mark missing fields as "UNKNOWN"
+   - Set name_confidence appropriately
+   - Add to unverified_medicines list if name cannot be verified
+   - **BUT STILL INCLUDE THE MEDICINE IN THE OUTPUT**
+
+9. **QUALITY CHECKS BEFORE RETURNING:**
+   - Count the number of medicines in the OCR text
+   - Count the number of medicines in your output
+   - If counts don't match, re-scan the OCR text for missed medicines
+   - Ensure you haven't skipped any lines or sections
+   - Double-check the beginning and end of the OCR text
+
+---
+
+### OUTPUT FORMAT (STRICT JSON — NO EXTRA TEXT)
+
+{{
+  "medications": [
+    {{
+      "medicine_name": "normalized_name_or_UNVERIFIED:original",
+      "original_ocr_name": "exact_text_from_ocr",
+      "name_confidence": "HIGH|MEDIUM|LOW|UNVERIFIED",
+      "database_verified": true,
+      "dosage_strength": "500mg",
+      "dosage_form": "Tablet|Capsule|Syrup|Injection|UNKNOWN",
+      "frequency_per_day": "1-0-1",
+      "duration": "5 days",
+      "usage_instructions": "Take one tablet three times daily",
+      "food_guidance": "before food|after food|UNKNOWN"
+    }}
+  ],
+  "data_quality": {{
+    "ocr_noise_detected": true,
+    "manual_review_recommended": false,
+    "unverified_medicines": ["medicine_name_1", "medicine_name_2"],
+    "total_medicines_found": 5
+  }}
+}}
+
+---
+
+### FIELD RULES:
+- medicine_name: Normalized name if verified, otherwise "UNVERIFIED: [original_ocr_text]"
+- original_ocr_name: Exact text from OCR (preserve all artifacts)
+- name_confidence: 
+  * HIGH = Found in database exactly or with minor normalization
+  * MEDIUM = Normalized with phonetic matching, found in database
+  * LOW = Heavily corrected but found in database
+  * UNVERIFIED = Not found in database after all attempts
+- database_verified: true if found in database, false otherwise
+- frequency_per_day: Examples → "1-0-1", "OD", "BD", "TDS", "101", "|-0-1", "0-1-|", "1", "2", "3"
+- usage_instructions: Explain timing and frequency in simple neutral language
+- food_guidance: ONLY "before food", "after food", or "UNKNOWN"
+- total_medicines_found: MUST match the actual number of medicines in the medications array
+- unverified_medicines: List of medicine names that could not be verified in database
+- manual_review_recommended: Set to true if any medicines are unverified or OCR quality is very poor
+- **Empty array if no medicines found (but this should be rare)**
+
+### NORMALIZATION EXAMPLES:
+- OCR: "Paracitamol 500rng" → medicine_name: "Paracetamol", dosage_strength: "500mg", name_confidence: "MEDIUM"
+- OCR: "PCM Tab" → medicine_name: "Paracetamol", dosage_form: "Tablet", name_confidence: "HIGH"
+- OCR: "Ibuprofin" → medicine_name: "Ibuprofen", name_confidence: "MEDIUM"
+- OCR: "XyZ123Med" → medicine_name: "UNVERIFIED: XyZ123Med", name_confidence: "UNVERIFIED"
+
+### EXTRACTION EXAMPLES:
+
+**Example 1 - List Format:**
+OCR: "1. Paracetamol 500mg\n2. Ibuprofen 400mg\n3. Omeprazole 20mg"
+→ Extract 3 medicines
+
+**Example 2 - Inline Format:**
+OCR: "Tab Paracetamol 500mg, Tab Ibuprofen 400mg, Cap Omeprazole 20mg"
+→ Extract 3 medicines
+
+**Example 3 - Mixed Format:**
+OCR: "Rx: Paracetamol 500mg 1-0-1\nIbuprofen 400mg 0-0-1\nOmeprazole 20mg OD"
+→ Extract 3 medicines
+
+**REMEMBER: Your goal is to extract EVERY SINGLE medicine, not just the first few!**
+
+OCR TEXT:
+{ocr_text}

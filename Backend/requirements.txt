@@ -1,0 +1,23 @@
+langchain
+groq
+ipykernel
+easyocr
+python-dotenv
+google-cloud-vision
+langgraph
+langchain-groq
+matplotlib
+langchain[anthropic]
+Flask==3.0.0
+Werkzeug==3.0.1
+supabase
+pandas
+openpyxl
+langchain-text-splitters
+langchain-huggingface
+sentence-transformers
+langchain_community
+twilio
+fastapi
+uvicorn
+# -e .

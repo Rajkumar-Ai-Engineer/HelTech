@@ -1,0 +1,28 @@
+version: '3.8'
+
+services:
+  healthai:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        - VITE_SUPABASE_URL=${VITE_SUPABASE_URL}
+        - VITE_SUPABASE_ANON_KEY=${VITE_SUPABASE_ANON_KEY}
+    container_name: healthai-app
+    ports:
+      - "8000:8000"
+      - "5173:5173"
+    environment:
+      - GROQ_API_KEY=${GROQ_API_KEY}
+      - HUGGINGFACE_API_KEY=${HUGGINGFACE_API_KEY}
+      - SUPABASE_URL=${SUPABASE_URL}
+      - SUPABASE_KEY=${SUPABASE_KEY}
+      - LANGSMITH_API_KEY=${LANGSMITH_API_KEY}
+      - LANGSMITH_PROJECT=${LANGSMITH_PROJECT}
+    restart: unless-stopped
+    networks:
+      - healthai-network
+
+networks:
+  healthai-network:
+    driver: bridge

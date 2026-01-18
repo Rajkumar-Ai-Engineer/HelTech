@@ -1,0 +1,9 @@
+2026-01-13 22:31:57 - INFO - Reading text file from: C:\Hackathons\Thiagarajar\main\Backend\HealthCare\prompts\Prescription\Main.txt
+2026-01-13 22:31:57 - INFO - File read successfully
+2026-01-13 22:32:01 - INFO - Reading text file from: C:\Hackathons\Thiagarajar\main\Backend\HealthCare\prompts\Assistant\System.txt
+2026-01-13 22:32:01 - INFO - File read successfully
+2026-01-13 22:32:02 - INFO - Assistant Agent initialized
+2026-01-13 22:32:02 - INFO - Agents Initialized
+2026-01-13 22:32:02 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:3000
+2026-01-13 22:32:02 - INFO - [33mPress CTRL+C to quit[0m
