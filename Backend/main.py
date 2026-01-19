@@ -130,18 +130,30 @@ def root():
 async def chat_with_assistant(message: ChatMessage):
     """Chat with the AI health assistant"""
     try:
+        logging.info(f"Received chat message: {message.message[:50]}...")
         agent = get_assistant_agent()
         response = agent.run(message.message)
+        logging.info("Chat response generated successfully")
         return ChatResponse(response=response)
     except HealthAIException as e:
+        import traceback
+        error_detail = f"Assistant error: {str(e)}\n{traceback.format_exc()}"
+        logging.error(error_detail)
+        print(error_detail)  # Print to stdout for Docker logs
         raise HTTPException(status_code=500, detail=f"Assistant error: {str(e)}")
     except Exception as e:
+        import traceback
+        error_detail = f"Unexpected error: {str(e)}\n{traceback.format_exc()}"
+        logging.error(error_detail)
+        print(error_detail)  # Print to stdout for Docker logs
         raise HTTPException(status_code=500, detail=f"Unexpected error: {str(e)}")
 
 @app.post("/api/prescription/analyze", response_model=PrescriptionResponse)
 async def analyze_prescription(file: UploadFile = File(...)):
     """Analyze prescription image using OCR and AI"""
     try:
+        logging.info(f"Received prescription file: {file.filename}")
+        
         # Validate file type
         if not file.content_type.startswith('image/'):
             raise HTTPException(status_code=400, detail="Only image files are supported")
@@ -152,11 +164,15 @@ async def analyze_prescription(file: UploadFile = File(...)):
             temp_file.write(content)
             temp_file_path = temp_file.name
         
+        logging.info(f"Temp file created: {temp_file_path}")
+        
         try:
             # Process prescription
             agent = get_prescription_agent()
+            logging.info("Starting prescription analysis...")
             analysis = agent.invoke(temp_file_path)
             analysis = output_formatter(analysis)
+            logging.info("Prescription analysis completed successfully")
             return PrescriptionResponse(analysis=analysis)
         finally:
             # Clean up temporary file
@@ -164,8 +180,16 @@ async def analyze_prescription(file: UploadFile = File(...)):
                 os.unlink(temp_file_path)
                 
     except HealthAIException as e:
+        import traceback
+        error_detail = f"Prescription analysis error: {str(e)}\n{traceback.format_exc()}"
+        logging.error(error_detail)
+        print(error_detail)  # Print to stdout for Docker logs
         raise HTTPException(status_code=500, detail=f"Prescription analysis error: {str(e)}")
     except Exception as e:
+        import traceback
+        error_detail = f"Unexpected error: {str(e)}\n{traceback.format_exc()}"
+        logging.error(error_detail)
+        print(error_detail)  # Print to stdout for Docker logs
         raise HTTPException(status_code=500, detail=f"Unexpected error: {str(e)}")
 
 @app.get("/api/health")
