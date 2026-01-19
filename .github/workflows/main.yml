@@ -110,6 +110,7 @@ jobs:
             --name=healthai \
             -e 'GROQ_API_KEY=${{ secrets.GROQ_API_KEY }}' \
             -e 'HUGGINGFACE_API_KEY=${{ secrets.HUGGINGFACE_API_KEY }}' \
+            -e 'HUGGINFACE_EMBEDDING_MODEL_ID=sentence-transformers/all-MiniLM-L6-v2' \
             -e 'SUPABASE_URL=${{ secrets.SUPABASE_URL }}' \
             -e 'SUPABASE_KEY=${{ secrets.SUPABASE_KEY }}' \
             -e 'LANGSMITH_API_KEY=${{ secrets.LANGSMITH_API_KEY }}' \
