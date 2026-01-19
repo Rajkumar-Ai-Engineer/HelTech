@@ -3,7 +3,7 @@ load_dotenv()
 import os 
 from pathlib import Path
 
-# Base directory - this points to /app/backend/HealthCare (or C:\...\Backend\HealthCare locally)
+# Base directory - this points to Backend/HealthCare
 BASE_DIR = Path(__file__).resolve().parent.parent.parent
 
 ########################################
@@ -12,7 +12,8 @@ GROQ_API_KEY = os.getenv("GROQ_API_KEY")
 
 # Prescription
 GPT_120b_ID = "llama-3.3-70b-versatile"
-VISION_OCR_Path = str(BASE_DIR / "googlevisionAPI" / "credientials.json")
+# googlevisionAPI is at Backend/ level, not HealthCare/ level, so go up one more directory
+VISION_OCR_Path = str(BASE_DIR.parent / "googlevisionAPI" / "credientials.json")
 PRESCRIPTION_MODEL_TEMPERATURE = 0.2
 SYSTEM_PROMPT_PATH = str(BASE_DIR / "prompts" / "Prescription" / "Main.txt")
 HUGGINGFACE_API_KEY = os.getenv("HUGGINGFACE_API_KEY")
