@@ -22,6 +22,7 @@ RUN uv pip install -r requirements.txt
 
 # Copy backend code
 COPY Backend/HealthCare ./HealthCare
+COPY Backend/googlevisionAPI ./googlevisionAPI
 COPY Backend/main.py .
 
 # Stage 2: Frontend
