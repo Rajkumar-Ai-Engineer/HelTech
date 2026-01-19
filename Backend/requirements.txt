@@ -20,4 +20,5 @@ langchain_community
 twilio
 fastapi
 uvicorn
+python-multipart
 # -e .
