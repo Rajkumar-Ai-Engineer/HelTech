@@ -28,10 +28,15 @@ export default function Prescription() {
             const formData = new FormData()
             formData.append('file', file)
 
-            console.log('Sending request to:', 'http://localhost:8000/api/prescription/analyze')
+            // Dynamic API URL that works both locally and in production
+            const API_BASE_URL = window.location.hostname === 'localhost'
+                ? 'http://localhost:8000'
+                : `http://${window.location.hostname}:8000`
+
+            console.log('Uploading to:', `${API_BASE_URL}/api/prescription/analyze`)
             console.log('File:', file.name, file.type)
 
-            const response = await fetch('http://127.0.0.1:8000/api/prescription/analyze', {
+            const response = await fetch(`${API_BASE_URL}/api/prescription/analyze`, {
                 method: 'POST',
                 body: formData
             })

@@ -44,7 +44,12 @@ export default function Assistant() {
         setIsLoading(true)
 
         try {
-            const response = await fetch('http://localhost:8000/api/assistant/chat', {
+            // Dynamic API URL that works both locally and in production
+            const API_BASE_URL = window.location.hostname === 'localhost' 
+                ? 'http://localhost:8000' 
+                : `http://${window.location.hostname}:8000`
+            
+            const response = await fetch(`${API_BASE_URL}/api/assistant/chat`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
