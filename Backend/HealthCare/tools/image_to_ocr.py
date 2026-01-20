@@ -14,8 +14,16 @@ class ImageToOCR:
             image_path (str): Path to the image file.
         """
         try:
-            logging.info("Extracting text")
-            with open(image_path, "rb") as image_file:
+            import os
+            # Normalize path to handle escaping issues
+            normalized_path = os.path.normpath(image_path.strip())
+            
+            logging.info(f"Extracting text from: {normalized_path}")
+            
+            if not os.path.exists(normalized_path):
+                raise FileNotFoundError(f"Image file not found: {normalized_path}")
+            
+            with open(normalized_path, "rb") as image_file:
                 content = image_file.read()
 
             image = vision.Image(content=content)

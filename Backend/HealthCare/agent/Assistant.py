@@ -15,9 +15,8 @@ class Assistant_Agent:
         self.system_prompt_path = Assistant_Constants.Assistant_System_prompt_path
         self.prompt = read_txt_file(self.system_prompt_path)
         self.temperature = Assistant_Constants.Assistant_Temperature
-        self.llm = llm_client(temperature=self.temperature,model_name="gpt-oss-120b")
+        self.llm = llm_client(temperature=self.temperature,model_name="openai/gpt-oss-120b")
         self.summarizer =  llm_client(model_name="llama-3.1-8b-instant",temperature=0.5)
-
         self.agent = create_agent(
             model= self.llm,
             system_prompt=self.prompt,
