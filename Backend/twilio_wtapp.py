@@ -43,7 +43,7 @@ def summarize_response(raw_response):
 account_sid = os.environ.get("Twilio_account_sid")
 auth_token = os.environ.get("Twilio_auth_token")
 
-if not account_sid and auth_token:
+if not account_sid or not auth_token:
     logging.error("Twilio credientials Missing")
     raise HealthAIException("Twilio Credientials missing",sys)
 
@@ -114,7 +114,7 @@ def output_formatter(raw:json):
             med_message += f"📅 *Duration:* {med.get('duration', 'Not specified')}\n\n"
             med_message += f"🍽️ *Food Instructions:*\n{med.get('food_interactions', 'No specific instructions')}\n\n"
             med_message += f"⚠️ *Important Notes:*\n{med.get('recommendations', 'No additional notes')}\n\n"
-            med_message += "----------------------------------------------\n\n"
+            med_message += "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n\n"
     except Exception as e:
         med_message = f"Error formatting response: {e}"
         logging.error(med_message)
@@ -200,7 +200,7 @@ def send_prescription_messages(media_url,to_number):
         client.messages.create(
             from_="whatsapp:+14155238886",
             to=f"whatsapp:{to_number}",
-            body=f"🏥 *Prescription Analysis Complete*\n\nSending details for each medication.."
+            body="🏥 *Prescription Analysis Complete*\n\nSending details for each medication.."
             )
         logging.info(result)
         medical_message = output_formatter(result)
